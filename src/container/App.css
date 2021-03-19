@@ -3,3 +3,10 @@ body {
   font-size: 16px;
   color: #3c3c3c;
 }
+
+a,
+a:hover {
+  text-decoration: none;
+  color: #000000
+}
+
