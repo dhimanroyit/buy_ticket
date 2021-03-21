@@ -1,0 +1,29 @@
+
+.resultItem {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.resultItemIcon {
+  font-size: 40px;
+}
+
+.resultItemLabel {
+  text-transform: capitalize;
+  margin-left: 20px;
+  font-size: 22px;
+  margin-bottom: 0;
+}
+
+.resultItemPeople {
+ margin-left: 20px;
+}
+
+.resultItemPrice {
+  margin-left: auto;
+}

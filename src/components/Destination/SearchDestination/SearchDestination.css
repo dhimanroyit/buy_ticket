@@ -1,0 +1,29 @@
+.search {
+  padding: 20px;
+  background-color: #E5E5E5;
+  border-radius: 10px;
+}
+
+.search__label {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.search__input {
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+.search__btn {
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  background-color: rgba(49, 207, 171, .55);
+  padding: 10px;
+  border: none;
+  margin-top: 20px;
+}
