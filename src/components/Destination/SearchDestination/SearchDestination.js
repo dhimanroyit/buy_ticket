@@ -5,7 +5,6 @@ import {useForm} from 'react-hook-form';
 const SearchDestination = ({product, searchHandler, setSearchValue}) => {
   const {register, handleSubmit,} = useForm()
   const onSubmit = (data) => {
-    console.log(data);
     searchHandler(product)
     setSearchValue(data);
   }

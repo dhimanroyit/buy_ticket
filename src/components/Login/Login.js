@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import 'firebase/auth';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import ButtonAuth from '../ButtonAuth/ButtonAuth';
@@ -10,7 +10,7 @@ import { googleLogin, loginUserWithEmailPass } from '../../firebase/loginManager
 
 const Login = () => {
   const {register, handleSubmit, errors} = useForm();
-  const {setUserLogin} = useContext(loginContext);
+  const {setUserLogin, setRootRoute} = useContext(loginContext);
   const history = useHistory();
   const location = useLocation()
   const {from} = location.state || {from: {pathname: "/"}};
@@ -31,10 +31,8 @@ const Login = () => {
   }
 
   const onSubmit = (data) => {
-    console.log(data);
     loginUserWithEmailPass(data.email, data.password)
       .then(res => {
-        console.log('dkad', res);
         const {email} = res.user;
         const user = {
           login: true, 
@@ -44,6 +42,11 @@ const Login = () => {
         history.replace(from);
       })
   }
+
+  useEffect(() => {
+    setRootRoute(false)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <div className="signup">
@@ -59,7 +62,10 @@ const Login = () => {
                     type="email" 
                     name="email" 
                     className="login__input" 
-                    placeholder="Email"/>
+                    placeholder="Email"
+                    autoComplete="email"
+                    />
+                    
                   {errors.email && <p className="login__inputError">Your input is required</p>}
                 </div>
                 <div className="login__inputGroup">

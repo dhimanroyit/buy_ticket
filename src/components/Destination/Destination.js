@@ -1,23 +1,28 @@
-import React , {useState} from 'react'
+import React , {useState, useContext, useEffect} from 'react'
 import { useParams } from 'react-router';
 import { allProductData } from '../../fakeData/fakeData';
 import './Destination.css';
 import SearchDestination from './SearchDestination/SearchDestination';
 import ResultItem from './ResultItem/ResultItem';
-import map from '../../assets/img/map.png';
+import loginContext from '../../context/loginContext';
+import GoogleMap from '../GoogleMap/GoogleMap';
 
 const Destination = () => {
   const {product} = useParams()
   const [searchResult, setSearchResult] = useState(null);
   const [searchValue, setSearchValue] = useState()
+  const {setRootRoute} = useContext(loginContext);
 
   const searchHandler = (productKey) => {
     const searchData = allProductData.filter(product => product.title === productKey);
-    console.log(searchData);
     setSearchResult(searchData);
   }
 
-console.log(searchValue);
+  useEffect(() => {
+    setRootRoute(false);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
     <div className="destination">
       <div className="container">
@@ -50,9 +55,9 @@ console.log(searchValue);
             
             </div>
           </div>
-          <div className="col-md-6">
+          <div className="col-md-8">
             <div className="destination__map">
-              <img src={map} alt="" className="destination__mapImg"/>
+              <GoogleMap />
             </div>
           </div>
         </div>

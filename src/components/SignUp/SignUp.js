@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import ButtonAuth from '../ButtonAuth/ButtonAuth';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
@@ -12,7 +12,7 @@ const SignUp = () => {
   const location = useLocation()
   const {from} = location.state || {from: {pathname: "/"}};
   const {register, handleSubmit, errors} = useForm();
-  const {setUserLogin} = useContext(loginContext);
+  const {setUserLogin, setRootRoute} = useContext(loginContext);
   const onSubmit = (data) => {
     createUserWithEmailPass(data)
       .then(res => {
@@ -36,6 +36,11 @@ const SignUp = () => {
         history.replace(from);
       })
   }
+
+  useEffect(() => {
+    setRootRoute(false);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <div className="signup">

@@ -1,7 +1,6 @@
 .header {
   width: 100%;
   background-color: transparent;
-  height: 15vh;
   display: flex;
   align-items: center;
 }
@@ -10,6 +9,11 @@
   font-size: 48px;
   font-weight: 700;
   color: #000000
+}
+.nav {
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .menu {
@@ -28,4 +32,41 @@
 .menu__itemLink-login {
   border-radius: 5px;
   background-color: yellow;
+}
+
+.nav--border {
+  border-bottom: 1px solid #c7c7c7c7;
+}
+.navbar-toggler {
+  display: none;
+}
+
+@media (max-width: 767px) {
+
+  .menu {
+    display: none;
+  }
+  .navbar-toggler {
+    display: block;
+  }
+  .mobile-menu{
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #fff;
+    width: 100%;
+    padding: 10px;
+    z-index: 1000;
+  }
+  .mobileMenu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .mobileMenu__itemLink {
+    padding: 10px 15px;
+    width: 100%;
+    display: block;
+  }
 }

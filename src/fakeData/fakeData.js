@@ -19,5 +19,5 @@ export const allProductData = [
   {id: 'b10', title: 'bike', icon: faMotorcycle, people: 5, price: 60 },
   {id: 'b11', title: 'bus', icon: faBus, people: 4, price: 60 },
   {id: 'b12', title: 'car', icon: faCar, people: 1, price: 60 },
-  {id: 'b13', title: 'Train', icon: faTrain, people: 9, price: 60 },
+  {id: 'b13', title: 'train', icon: faTrain, people: 9, price: 60 },
 ]

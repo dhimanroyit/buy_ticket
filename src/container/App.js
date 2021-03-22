@@ -16,16 +16,26 @@ firebaseInit();
 function App() {
   const [userLogin, setUserLogin] = useState({login: false});
   const [productTitle, setProductTitle] = useState("car")
+  const [rootRoute, setRootRoute] = useState(true);
   const userInfo = {
     userLogin,
     setUserLogin,
     productTitle,
     setProductTitle,
+    rootRoute,
+    setRootRoute,
   }
 
+  let appStyle;
+  if(rootRoute) {
+    appStyle = "app app--bg"
+  } else {
+    appStyle = "app"
+  }
   return (
     <Router>
       <loginContext.Provider value={userInfo}>
+        <div className={appStyle}>
         <Header />
         <Switch>
           <Route exact path="/">
@@ -41,6 +51,7 @@ function App() {
             <Destination />
           </PrivateRoute>
         </Switch>
+        </div>
       </loginContext.Provider>
     </Router>
   );
