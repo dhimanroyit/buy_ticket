@@ -31,7 +31,11 @@
 
 .menu__itemLink-login {
   border-radius: 5px;
-  background-color: yellow;
+  background-color: #e84545;
+  color: white;
+}
+.menu__itemLink-login:hover {
+  color: white;
 }
 
 .nav--border {

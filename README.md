@@ -1,6 +1,6 @@
 # Project Name: BuyTicket
 
-### [Live Demo](https://affectionate-easley-4dbf25.netlify.app/)
+### [Live Demo](https://buyticket-9f85d.web.app/)
 
 This is online ticket buy service provider project. There are 4 type of services car, bus, bike, train. 
 
