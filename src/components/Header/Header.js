@@ -16,7 +16,7 @@ const Header = () => {
       <div className="container">
         <nav className={`d-flex align-items-center justify-content-between nav ${navBottomBorder}`}>
           <Link to="/" className="logo">BuyTicket</Link>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <FontAwesomeIcon icon={faBars} />
           </button>
           <div className="collapse navbar-collapse mobile-menu" id="navbarSupportedContent">

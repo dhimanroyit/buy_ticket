@@ -8,16 +8,26 @@ import { googleLogin, createUserWithEmailPass } from '../../firebase/loginManage
 
 const SignUp = () => {
   const [accountSuccess, setAccountSuccess] = useState(false)
+  const [isPatchMatch, setIsPatchMatch] = useState(false);
   const history = useHistory();
   const location = useLocation()
   const {from} = location.state || {from: {pathname: "/"}};
   const {register, handleSubmit, errors} = useForm();
   const {setUserLogin, setRootRoute} = useContext(loginContext);
   const onSubmit = (data) => {
-    createUserWithEmailPass(data)
+    console.log(data);
+    let isMatch = false;
+    if(data.password === data.confirmPassword) {
+      isMatch = true
+    } else {
+      setIsPatchMatch(true);
+    }
+    if(isMatch) {
+      createUserWithEmailPass(data)
       .then(res => {
         setAccountSuccess(true);        
       })
+    }
   }
 
 
@@ -74,7 +84,9 @@ const SignUp = () => {
                     name="password" 
                     ref={register({required: true, minLength: 6})} 
                     className="login__input" 
-                    placeholder="Password" />
+                    placeholder="Password"
+                    autoComplete="password"
+                    />
                   {errors.password?.type === "required" && <p className="login__inputError">Your input is required</p>}
                   {errors.password?.type === "minLength" && <p className="login__inputError">Your input limit min length 6</p>}
                 </div>
@@ -84,7 +96,9 @@ const SignUp = () => {
                     name="confirmPassword" 
                     ref={register({required: true, minLength: 6})} 
                     className="login__input" 
-                    placeholder="Confirm Password" />
+                    placeholder="Confirm Password"
+                    autoComplete="confirm-password" />
+                    {isPatchMatch && <p className="login__inputError">Confirm password does not match</p>}
                   {errors.confirmPassword?.type === "required" && <p className="login__inputError">Your input is required</p>}
                   {errors.confirmPassword?.type === "minLength" && <p className="login__inputError">Your input limit min length 6</p>}
                 </div>
