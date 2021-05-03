@@ -9,3 +9,5 @@ This is online ticket buy service provider project. There are 4 type of services
 - [React](https://reactjs.org/)
 - [react-router-dom](https://reactrouter.com/)
 - [Firebase](https://firebase.google.com/)
+
+- practice problem
