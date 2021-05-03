@@ -11,15 +11,15 @@ This project is a web application for the online ticket service provider
 ```
 > git clone https://github.com/dhimanroyit/buy_ticket.git
 ```
-1. Change Directory
+2. Change Directory
 ```
 > cd buy_ticket
 ```
-1. Install dependency
+3. Install dependency
 ```
 > npm install
 ```
-1. Run the app
+4. Run the app
 ```
 > npm start
 ```
